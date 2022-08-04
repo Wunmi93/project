@@ -3,26 +3,34 @@ showSlides();
 
 // Next/previous controls
 function plusSlides(n) {
-    showSlides(slidesIndex += n);
+    showSlides(slideIndex += n);
 }
 
 //Thumbnail images controls
 function currentSlide(n) {
-    ShowSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
+function showSlides() {
+    let i; ///Initialize a variable called i
+    let slides = document.getElementsByClassName("mySlides"); //Get elements in the HTML doc having class name 'mySlides'
+    // console.log(slides); //logging variable slides to the console. 
     for (i = 0; i < slides.length; i++) {
-        slides[i].getElementsByClassName.display = "none";
+        slides[i].display = "block";
+        // console.log(slides[i].display);
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].getElementsByClassName.display = "block";
-    setTimeout(showSlides, 2000); //Change image every 2 seconds
+    slides[slideIndex-1].display = "none";
+    setInterval(showSlides, 3000); 
 }
 
+
+
+// function logToConsole() {
+//     console.log("W");
+// }
+// setInterval(logToConsole, 3000); //Change image every 2 seconds
 /*
     let dots = document.getElementsByClassName("dot");
     if (n > slides.length) {dlideIndex =1}
@@ -34,3 +42,4 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += "active";
 }
+*/
